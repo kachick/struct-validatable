@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Struct::Validatable::SubclassInstanceMethods
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Struct.html" title="Struct (class)">Struct</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Validatable.html" title="Struct::Validatable (module)">Validatable</a></span></span>
+     &raquo; 
+    <span class="title">SubclassInstanceMethods</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Struct::Validatable::SubclassInstanceMethods
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/struct/validatable/subclass_instance_methods.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D%3D-instance_method" title="#[]= (instance method)">- (Object) <strong>[]=</strong>(key, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#_valid%3F-instance_method" title="#_valid? (instance method)">- (Boolean) <strong>_valid?</strong>(condition, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (SubclassInstanceMethods) <strong>initialize</strong>(*values) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of SubclassInstanceMethods.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid%3F-instance_method" title="#valid? (instance method)">- (Boolean) <strong>valid?</strong>(key, value = self[key]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>[]=</strong>(key, value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>, <tt>#to_sym</tt>, <tt>Integer</tt>, <tt>#to_int</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/struct/validatable/subclass_instance_methods.rb', line 15</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='aset op'>[]=</span><span class='lparen token'>(</span><span class='rubyid_key identifier id'>key</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='rubyid_autonym identifier id'>autonym</span> <span class='assign token'>=</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_autonym_for_key identifier id'>autonym_for_key</span> <span class='rubyid_key identifier id'>key</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_with_adjuster? fid id'>with_adjuster?</span> <span class='rubyid_autonym identifier id'>autonym</span>
+    <span class='rubyid_begin begin kw'>begin</span>
+      <span class='rubyid_value identifier id'>value</span> <span class='assign token'>=</span> <span class='rubyid_instance_exec identifier id'>instance_exec</span> <span class='rubyid_value identifier id'>value</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_adjuster_for identifier id'>adjuster_for</span><span class='lparen token'>(</span><span class='rubyid_autonym identifier id'>autonym</span><span class='rparen token'>)</span>
+    <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span>
+      <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_Validation constant id'>Validation</span><span class='colon2 op'>::</span><span class='rubyid_InvalidAdjustingError constant id'>InvalidAdjustingError</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_if if kw'>if</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_with_condition? fid id'>with_condition?</span><span class='lparen token'>(</span><span class='rubyid_autonym identifier id'>autonym</span><span class='rparen token'>)</span> 
+    <span class='rubyid_unless unless kw'>unless</span> <span class='rubyid__valid? fid id'>_valid?</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_condition_for identifier id'>condition_for</span><span class='lparen token'>(</span><span class='rubyid_autonym identifier id'>autonym</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span>
+      <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_Validation constant id'>Validation</span><span class='colon2 op'>::</span><span class='rubyid_InvalidWritingError constant id'>InvalidWritingError</span><span class='comma token'>,</span>
+        <span class='dstring node'>&quot;#{value.inspect} is deficient for #{key}(#{autonym})&quot;</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_super super kw'>super</span> <span class='rubyid_key identifier id'>key</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_valid?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>_valid?</strong>(condition, value)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>condition</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>Method</tt>, <tt>#===</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/struct/validatable/subclass_instance_methods.rb', line 50</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid__valid? fid id'>_valid?</span><span class='lparen token'>(</span><span class='rubyid_condition identifier id'>condition</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='rubyid_case case kw'>case</span> <span class='rubyid_condition identifier id'>condition</span>
+  <span class='rubyid_when when kw'>when</span> <span class='rubyid_Proc constant id'>Proc</span>
+    <span class='rubyid_instance_exec identifier id'>instance_exec</span> <span class='rubyid_value identifier id'>value</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='rubyid_condition identifier id'>condition</span>
+  <span class='rubyid_when when kw'>when</span> <span class='rubyid_Method constant id'>Method</span>
+    <span class='rubyid_condition identifier id'>condition</span><span class='dot token'>.</span><span class='rubyid_call identifier id'>call</span> <span class='rubyid_value identifier id'>value</span>
+  <span class='rubyid_else else kw'>else</span>
+    <span class='rubyid_condition identifier id'>condition</span> <span class='eqq op'>===</span> <span class='rubyid_value identifier id'>value</span>
+  <span class='rubyid_end end kw'>end</span> <span class='question op'>?</span> <span class='rubyid_true true kw'>true</span> <span class='colon op'>:</span> <span class='rubyid_false false kw'>false</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Struct::Validatable::SubclassInstanceMethods (module)">SubclassInstanceMethods</a></span></tt>) <strong>initialize</strong>(*values) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of SubclassInstanceMethods
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/struct/validatable/subclass_instance_methods.rb', line 7</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='rubyid_values identifier id'>values</span><span class='rparen token'>)</span>
+  <span class='rubyid_super super kw'>super</span>
+  <span class='rubyid_values identifier id'>values</span><span class='dot token'>.</span><span class='rubyid_each_with_index identifier id'>each_with_index</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_val identifier id'>val</span><span class='comma token'>,</span> <span class='rubyid_idx identifier id'>idx</span><span class='bitor op'>|</span>
+    <span class='rubyid_self self kw'>self</span><span class='lbrack token'>[</span><span class='rubyid_idx identifier id'>idx</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='rubyid_val identifier id'>val</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="valid?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>valid?</strong>(key, value = self[key]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>, <tt>#to_sym</tt>, <tt>Integer</tt>, <tt>#to_int</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/struct/validatable/subclass_instance_methods.rb', line 37</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_valid? fid id'>valid?</span><span class='lparen token'>(</span><span class='rubyid_key identifier id'>key</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span><span class='assign token'>=</span><span class='rubyid_self self kw'>self</span><span class='lbrack token'>[</span><span class='rubyid_key identifier id'>key</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='rubyid_return return kw'>return</span> <span class='rubyid_true true kw'>true</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_restrict? fid id'>restrict?</span> <span class='rubyid_key identifier id'>key</span>
+
+  <span class='rubyid_begin begin kw'>begin</span>
+    <span class='rubyid__valid? fid id'>_valid?</span> <span class='rubyid___class__ identifier id'>__class__</span><span class='dot token'>.</span><span class='rubyid_condition_for identifier id'>condition_for</span><span class='lparen token'>(</span><span class='rubyid_key identifier id'>key</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='rubyid_value identifier id'>value</span>
+  <span class='rubyid_rescue rescue kw'>rescue</span> <span class='rubyid_Exception constant id'>Exception</span>
+    <span class='rubyid_false false kw'>false</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Sep 28 00:23:04 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

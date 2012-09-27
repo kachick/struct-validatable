@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>struct-validatable</h1>
+
+<h2>Description</h2>
+
+<p>Struct will have flexible validators for each member.</p>
+
+<h2>Usage</h2>
+
+<h3>Overview</h3>
+
+<pre class="code ruby"><code><span class='rubyid_require identifier id'>require</span> <span class='string val'>'struct/validatable'</span>
+
+<span class='rubyid_Person constant id'>Person</span> <span class='assign token'>=</span> <span class='rubyid_Struct constant id'>Struct</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span> <span class='symbol val'>:name</span> <span class='rubyid_do do kw'>do</span>
+  <span class='rubyid_validator identifier id'>validator</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='rubyid_AND constant id'>AND</span><span class='lparen token'>(</span><span class='rubyid_String constant id'>String</span><span class='comma token'>,</span> <span class='regexp val'>/\w+/</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_person identifier id'>person</span> <span class='assign token'>=</span> <span class='rubyid_Person constant id'>Person</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+<span class='rubyid_person identifier id'>person</span><span class='dot token'>.</span><span class='rubyid_name identifier id'>name</span> <span class='assign token'>=</span> <span class='string val'>''</span>         <span class='comment val'>#=&gt; error</span>
+<span class='rubyid_person identifier id'>person</span><span class='dot token'>.</span><span class='rubyid_name identifier id'>name</span> <span class='assign token'>=</span> <span class='string val'>'Foo Bar'</span> <span class='comment val'>#=&gt; pass</span>
+<span class='rubyid_person identifier id'>person</span><span class='dot token'>.</span><span class='rubyid_valid? fid id'>valid?</span><span class='lparen token'>(</span><span class='symbol val'>:name</span><span class='rparen token'>)</span>    <span class='comment val'>#=&gt; true</span>
+<span class='rubyid_person identifier id'>person</span><span class='dot token'>.</span><span class='rubyid_name identifier id'>name</span><span class='dot token'>.</span><span class='rubyid_clear identifier id'>clear</span>
+<span class='rubyid_person identifier id'>person</span><span class='dot token'>.</span><span class='rubyid_valid? fid id'>valid?</span><span class='lparen token'>(</span><span class='symbol val'>:name</span><span class='rparen token'>)</span>    <span class='comment val'>#=&gt; false</span>
+</code></pre>
+
+<h3>More Examle</h3>
+
+<ul>
+<li>See original library <a href="https://github.com/kachick/striuct">striuct</a>.</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>Ruby - <a href="http://travis-ci.org/#!/kachick/struct-validatable">1.9.2 or later</a></li>
+<li>validation - <a href="https://github.com/kachick/validation">0.0.3</a></li>
+</ul>
+
+<h2>Install</h2>
+
+<pre class="code bash"><code>$ gem install struct-validatable
+</code></pre>
+
+<h2>Build Status</h2>
+
+<p><a href="http://travis-ci.org/kachick/struct-validatable"><img src="https://secure.travis-ci.org/kachick/struct-validatable.png" alt="Build Status"></a></p>
+
+<h2>Link</h2>
+
+<ul>
+<li><a href="https://github.com/kachick/struct-validatable">code</a></li>
+<li><a href="http://kachick.github.com/struct-validatable/yard/frames.html">API</a></li>
+<li><a href="https://github.com/kachick/struct-validatable/issues">issues</a></li>
+<li><a href="http://travis-ci.org/#!/kachick/struct-validatable">CI</a></li>
+<li><a href="https://rubygems.org/gems/struct-validatable">gem</a></li>
+</ul>
+
+<h2>License</h2>
+
+<p>The MIT X11 License<br>
+Copyright (c) 2011-2012 Kenichi Kamiya<br>
+See the file LICENSE for further details.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Fri Sep 28 00:23:03 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
