@@ -19,7 +19,7 @@ Person = Struct.new :name do
 end
 
 person = Person.new
-person.name = ''         #=> error
+person.name = ''        #=> error
 person.name = 'Foo Bar' #=> pass
 person.valid?(:name)    #=> true
 person.name.clear
