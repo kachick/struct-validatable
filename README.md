@@ -1,6 +1,9 @@
 struct-validatable
 ===================
 
+[![Build Status](https://secure.travis-ci.org/kachick/struct-validatable.png)](http://travis-ci.org/kachick/struct-validatable)
+[![Gem Version](https://badge.fury.io/rb/struct-validatable.png)](http://badge.fury.io/rb/struct-validatable)
+
 Description
 ------------
 
@@ -28,13 +31,12 @@ person.valid?(:name)    #=> false
 
 ### More Examle
 
-* See original library [striuct](https://github.com/kachick/striuct).
+* See rooted project [striuct](https://github.com/kachick/striuct).
 
 Requirements
 ------------
 
-* Ruby - [1.9.2 or later](http://travis-ci.org/#!/kachick/struct-validatable)
-* validation - [0.0.3](https://github.com/kachick/validation)
+* [Ruby 1.9.3 or later](http://travis-ci.org/#!/kachick/struct-validatable)
 
 Install
 -------
@@ -43,14 +45,10 @@ Install
 $ gem install struct-validatable
 ```
 
-Build Status
-------------
-
-[![Build Status](https://secure.travis-ci.org/kachick/struct-validatable.png)](http://travis-ci.org/kachick/struct-validatable)
-
 Link
 ----
 
+* [Home](http://kachick.github.com/struct-validatable)
 * [code](https://github.com/kachick/struct-validatable)
 * [API](http://kachick.github.com/struct-validatable/yard/frames.html)
 * [issues](https://github.com/kachick/struct-validatable/issues)
