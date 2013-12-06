@@ -1,3 +1,5 @@
+# coding: us-ascii
+
 require_relative 'helper'
 
 class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase

@@ -1,5 +1,6 @@
-require_relative 'helper'
+# coding: us-ascii
 
+require_relative 'helper'
 
 class Test_Struct_Subclass_Instance_Adjuster < Test::Unit::TestCase
 

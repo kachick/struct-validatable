@@ -1,3 +1,5 @@
+# coding: us-ascii
+
 require_relative 'helper'
 
 class Test_Struct_Subclass_Validation_Util < Test::Unit::TestCase

@@ -1,3 +1,5 @@
+# coding: us-ascii
+
 require 'validation'
 
 class Struct; module Validatable
