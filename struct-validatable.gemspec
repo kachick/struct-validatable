@@ -13,7 +13,6 @@ Gem::Specification.new do |gem|
   gem.name          = 'struct-validatable'
   gem.version       = Struct::Validatable::VERSION.dup
 
-  gem.required_ruby_version = '>= 1.9.3'
   gem.add_runtime_dependency 'validation', '~> 0.0.7'
   gem.add_development_dependency 'test-unit', '>= 2.5.5', '< 2.6'
   gem.add_development_dependency 'struct-alias_member', '~> 0.0.3'
