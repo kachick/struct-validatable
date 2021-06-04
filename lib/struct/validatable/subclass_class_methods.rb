@@ -3,7 +3,7 @@
 class Struct; module Validatable
 
   module SubclassClassMethods
-  
+
     # @group Utils
 
     # @param [Symbol, String, #to_sym, Integer, #to_int] key
@@ -44,12 +44,6 @@ class Struct; module Validatable
     def autonym_for_member(_name)
       _name = _name.to_sym
 
-      if respond_to? :alias_member
-        if @aliases.has_key? _name
-          return @aliases.fetch(_name)
-        end
-      end
-
       raise NameError, _name unless members.include? _name
 
       _name
@@ -78,10 +72,27 @@ class Struct; module Validatable
 
     # @endgroup
 
+    # Adjuster Builders
+    # Apply adjuster when passed pattern.
+    # @param pattern [Proc, Method, #===]
+    # @param adjuster [Proc, #to_proc]
+    # @return [Proc]
+    def WHEN(pattern, adjuster)
+      unless Eqq.valid?(pattern)
+        raise ArgumentError, 'wrong object for pattern'
+      end
+
+      unless adjustable?(adjuster)
+        raise ArgumentError, 'wrong object for adjuster'
+      end
+
+      ->v { _valid?(pattern, v) ? adjuster.call(v) : v }
+    end
+
     private
 
     # @group Macro for library users
-    
+
     # @param [Symbol, String, #to_sym, Integer, #to_int] key
     # @param [Proc, Method, #===] condition
     # @return [nil]
@@ -107,7 +118,7 @@ class Struct; module Validatable
 
       setter = :"#{autonym}="
       alias_method :"_original_setter_#{setter}", setter
-      
+
       undef_method setter
       define_method setter do |value|
         self[autonym] = value
@@ -115,7 +126,7 @@ class Struct; module Validatable
 
       nil
     end
-    
+
     # @endgroup
 
   end

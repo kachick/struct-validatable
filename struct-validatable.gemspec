@@ -1,36 +1,47 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
-require File.expand_path('../lib/struct/validatable/version', __FILE__)
+lib_name = 'struct-validatable'
+
+require_relative './lib/struct/validatable/version'
+repository_url = "https://github.com/kachick/#{lib_name}"
 
 Gem::Specification.new do |gem|
-  # specific
-
-  gem.description   = %q{Struct will have validators for each member.}
-  gem.summary       = gem.description.dup
-  gem.homepage      = 'http://kachick.github.com/struct-validatable'
+  gem.summary       = %q{Struct will be able to have validators for each member}
+  gem.description   = <<-'DESCRIPTION'
+    Struct will be able to have validators for each member
+  DESCRIPTION
+  gem.homepage      = repository_url
   gem.license       = 'MIT'
+  gem.name          = lib_name
+  gem.version       = Struct::Validatable::VERSION
 
-  gem.name          = 'struct-validatable'
-  gem.version       = Struct::Validatable::VERSION.dup
+  gem.metadata = {
+    'documentation_uri' => 'https://kachick.github.io/struct-validatable/',
+    'homepage_uri'      => repository_url,
+    'source_code_uri'   => repository_url,
+    'bug_tracker_uri'   => "#{repository_url}/issues"
+  }
 
-  gem.add_runtime_dependency 'validation', '~> 0.0.7'
-  gem.add_development_dependency 'struct-alias_member', '~> 0.0.3'
-  gem.add_development_dependency 'test-unit', '>= 3.3.3', '< 4'
-  gem.add_development_dependency 'yard', '>= 0.9.20', '< 2'
-  gem.add_development_dependency 'rake', '>= 10', '< 20'
-  gem.add_development_dependency 'bundler', '>= 2', '< 3'
+  gem.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
 
-  if RUBY_ENGINE == 'rbx'
-    gem.add_dependency 'rubysl', '~> 2.0'
-  end
+  gem.add_runtime_dependency 'eqq', '>= 0.0.5', '< 0.1.0'
 
   # common
 
   gem.authors       = ['Kenichi Kamiya']
   gem.email         = ['kachick1+ruby@gmail.com']
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  git_managed_files = `git ls-files`.lines.map(&:chomp)
+  might_be_parsing_by_tool_as_dependabot = git_managed_files.empty?
+  base_files = Dir['README*', '*LICENSE*',  'lib/**/*', 'sig/**/*'].uniq
+  files = might_be_parsing_by_tool_as_dependabot ? base_files : (base_files & git_managed_files)
+
+  unless might_be_parsing_by_tool_as_dependabot
+    if files.grep(%r!\A(?:lib|sig)/!).size < 2
+      raise "obvious mistaken in packaging files, looks shortage: #{files.inspect}"
+    end
+  end
+
+  gem.files         = files
   gem.require_paths = ['lib']
 end
-

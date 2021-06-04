@@ -1,9 +1,9 @@
 # coding: us-ascii
 
 class Struct; module Validatable
-  
+
   module SubclassInstanceMethods
-    
+
     alias_method :__class__, :class
 
     def initialize(*values)
@@ -21,13 +21,13 @@ class Struct; module Validatable
         begin
           value = instance_exec value, &__class__.adjuster_for(autonym)
         rescue Exception
-          raise Validation::InvalidAdjustingError
+          raise Struct::Validatable::InvalidAdjustingError
         end
       end
 
-      if __class__.with_condition?(autonym) 
+      if __class__.with_condition?(autonym)
         unless _valid? __class__.condition_for(autonym), value
-          raise Validation::InvalidWritingError,
+          raise Struct::Validatable::InvalidWritingError,
             "#{value.inspect} is deficient for #{key}(#{autonym})"
         end
       end
@@ -45,9 +45,9 @@ class Struct; module Validatable
         false
       end
     end
-    
+
     private
-    
+
     # @param [Proc, Method, #===] condition
     def _valid?(condition, value)
       case condition
