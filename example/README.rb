@@ -1,4 +1,5 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
 $VERBOSE = true
 
@@ -10,7 +11,7 @@ end
 
 person = Person.new
 #person.name = ''         #=> error
-person.name = 'Foo Bar'
+person.name = +'Foo Bar'
 p person.valid?(:name) #=> true
 p person
 person.name.clear

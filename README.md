@@ -1,16 +1,19 @@
-struct-validatable
-===================
+# struct-validatable
 
-[![Build Status](https://secure.travis-ci.org/kachick/struct-validatable.png)](http://travis-ci.org/kachick/struct-validatable)
+![Build Status](https://github.com/kachick/struct-validatable/actions/workflows/test_behaviors.yml/badge.svg?branch=main)
 [![Gem Version](https://badge.fury.io/rb/struct-validatable.png)](http://badge.fury.io/rb/struct-validatable)
 
-Description
-------------
+Struct will be able to have validators for each member
 
-Struct will have flexible validators for each member.
+## Usage
 
-Usage
-------
+Require Ruby 2.7 or later
+
+Add below code into your Gemfile
+
+```ruby
+gem 'struct-validatable', '>= 0.2.0', '< 0.3.0'
+```
 
 ### Overview
 
@@ -23,41 +26,16 @@ end
 
 person = Person.new
 person.name = ''        #=> error
-person.name = 'Foo Bar' #=> pass
+person.name = +'Foo Bar' #=> pass
 person.valid?(:name)    #=> true
 person.name.clear
 person.valid?(:name)    #=> false
 ```
 
-### More Examle
+* The pattern builder DSL is just using [eqq](https://github.com/kachick/eqq)
+* Supporting `keyword_init: true`
 
-* See rooted project [striuct](https://github.com/kachick/striuct).
+## Links
 
-Requirements
-------------
-
-* [Ruby 2.5 or later](http://travis-ci.org/#!/kachick/struct-validatable)
-
-Install
--------
-
-```bash
-$ gem install struct-validatable
-```
-
-Link
-----
-
-* [Home](http://kachick.github.com/struct-validatable)
-* [code](https://github.com/kachick/struct-validatable)
-* [API](http://kachick.github.com/struct-validatable/yard/frames.html)
-* [issues](https://github.com/kachick/struct-validatable/issues)
-* [CI](http://travis-ci.org/#!/kachick/struct-validatable)
-* [gem](https://rubygems.org/gems/struct-validatable)
-
-License
--------
-
-The MIT X11 License  
-Copyright (c) 2011-2012 Kenichi Kamiya  
-See MIT-LICENSE for further details.
+* [Repository](https://github.com/kachick/struct-validatable)
+* [API documents](https://kachick.github.io/struct-validatable/)
