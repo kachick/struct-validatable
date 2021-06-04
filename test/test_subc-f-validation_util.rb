@@ -1,4 +1,5 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
 require_relative 'helper'
 
@@ -6,7 +7,7 @@ class Test_Struct_Subclass_Validation_Util < Test::Unit::TestCase
 
   ALWAYS_OCCUR_ERROR = ->_{raise Exception}
   peep = nil
-  
+
   Foo = Struct.new :foo, :bar, :hoge, :some_str do
     validator :foo, nil
     validator :bar, ALWAYS_OCCUR_ERROR

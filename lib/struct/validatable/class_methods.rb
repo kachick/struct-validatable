@@ -1,27 +1,25 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
-class Struct; module Validatable
+class Struct
+  module Validatable
+    module ClassMethods
+      private
 
-  module ClassMethods
+      def inherited(cls)
+        super(cls)
 
-    private
+        cls.class_eval do
+          extend(::Eqq::Buildable)
+          extend(::Struct::Validatable::SubclassClassMethods)
+          include(::Struct::Validatable::SubclassInstanceMethods)
 
-    def inherited(cls)
-      super cls
+          # [Hash] autonym[Symbol] => condition
+          @conditions = {}
 
-      cls.class_eval do
-        extend ::Eqq::Buildable
-        extend ::Struct::Validatable::SubclassClassMethods
-        include ::Struct::Validatable::SubclassInstanceMethods
-
-        # [Hash] autonym[Symbol] => condition
-        @conditions = {}
-
-        # [Hash] autonym[Symbol] => adjuster
-        @adjusters = {}
+          # [Hash] autonym[Symbol] => adjuster
+          @adjusters = {}
+        end
       end
     end
-
-  end
-
-end; end
+  end; end

@@ -1,10 +1,11 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
 require_relative 'helper'
 
 class Test_Struct_Subclass_Predicate_Adjuster < Test::Unit::TestCase
 
-  class Subclass < Struct.new :no_with, :with, :cond_with, :foo
+Subclass = Struct.new :no_with, :with, :cond_with, :foo do
     validator :no_with
     validator :with do |_|; end
     validator :cond_with, BasicObject do |_|; end
@@ -13,7 +14,7 @@ class Test_Struct_Subclass_Predicate_Adjuster < Test::Unit::TestCase
   INSTANCE = Subclass.new.freeze
 
   TYPE_PAIRS = {
-    class: Subclass,
+    class: Subclass
   }.freeze
 
   [:with_adjuster?].each do |predicate|
@@ -46,7 +47,7 @@ end
 
 class Test_Struct_Subclass_Predicate_Condition < Test::Unit::TestCase
 
-  class Subclass < Struct.new :no_with, :with, :with_any, :adj_with, :foo
+Subclass = Struct.new :no_with, :with, :with_any, :adj_with, :foo do
     validator :no_with
     validator :with, nil
     validator :with_any, ANYTHING()
@@ -56,7 +57,7 @@ class Test_Struct_Subclass_Predicate_Condition < Test::Unit::TestCase
   INSTANCE = Subclass.new.freeze
 
   TYPE_PAIRS = {
-    class: Subclass,
+    class: Subclass
   }.freeze
 
   [:with_condition?, :restrict?].each do |predicate|

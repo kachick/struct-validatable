@@ -1,4 +1,5 @@
 # coding: us-ascii
+# frozen_string_literal: true
 
 require_relative 'helper'
 
@@ -64,8 +65,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
     sth.rescue_error = false
 
     obj.singleton_class.class_eval do
-      def no_name!
-      end
+      def no_name!; end
     end
 
     assert_raises Struct::Validatable::InvalidWritingError do
@@ -170,8 +170,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
     end
 
     obj.singleton_class.class_eval do
-      def foo
-      end
+      def foo; end
     end
 
     raise unless obj.respond_to? :foo
@@ -193,8 +192,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
     end
 
     obj.singleton_class.class_eval do
-      def foo
-      end
+      def foo; end
     end
 
     assert_raises Struct::Validatable::InvalidWritingError do
@@ -204,8 +202,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
     raise unless obj.respond_to? :foo
 
     obj.singleton_class.class_eval do
-      def bar
-      end
+      def bar; end
     end
 
     raise unless obj.respond_to? :bar
