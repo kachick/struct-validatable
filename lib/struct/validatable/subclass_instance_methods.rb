@@ -6,10 +6,16 @@ class Struct
     module SubclassInstanceMethods
       alias_method :__class__, :class
 
-      def initialize(*values)
+      def initialize(*values, **kw_args)
         super
-        values.each_with_index do |val, idx|
-          self[idx] = val
+        if kw_args.empty?
+          values.each_with_index do |val, idx|
+            self[idx] = val
+          end
+        else
+          kw_args.each_pair do |kw, value|
+            self[kw] = value
+          end
         end
       end
 
@@ -32,7 +38,7 @@ class Struct
           end
         end
 
-        super(key, value)
+        super
       end
 
       # @param [Symbol, String, #to_sym, Integer, #to_int] key
@@ -64,4 +70,5 @@ class Struct
         end
       end
     end
-  end; end
+  end
+end

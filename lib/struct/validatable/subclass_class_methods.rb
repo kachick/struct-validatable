@@ -40,13 +40,13 @@ class Struct
         end
       end
 
-      # @param [Symbol, String, #to_sym] _name
-      def autonym_for_member(_name)
-        _name = _name.to_sym
+      # @param [Symbol, String, #to_sym] name
+      def autonym_for_member(name)
+        name = name.to_sym
 
-        raise NameError, _name unless members.include?(_name)
+        raise NameError, name unless members.include?(name)
 
-        _name
+        name
       end
 
       # @param [Integer, #to_int] index
@@ -129,4 +129,5 @@ class Struct
 
       # @endgroup
     end
-  end; end
+  end
+end

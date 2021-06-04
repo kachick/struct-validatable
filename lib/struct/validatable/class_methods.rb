@@ -6,13 +6,13 @@ class Struct
     module ClassMethods
       private
 
-      def inherited(cls)
-        super(cls)
+      def inherited(subclass)
+        super
 
-        cls.class_eval do
+        subclass.class_eval do
           extend(::Eqq::Buildable)
-          extend(::Struct::Validatable::SubclassClassMethods)
-          include(::Struct::Validatable::SubclassInstanceMethods)
+          extend(SubclassClassMethods)
+          include(SubclassInstanceMethods)
 
           # [Hash] autonym[Symbol] => condition
           @conditions = {}
@@ -22,4 +22,5 @@ class Struct
         end
       end
     end
-  end; end
+  end
+end

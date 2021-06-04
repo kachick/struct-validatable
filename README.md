@@ -7,7 +7,7 @@ Struct will be able to have validators for each member
 
 ## Usage
 
-Require Ruby 2.6 or later
+Require Ruby 2.7 or later
 
 Add below code into your Gemfile
 

@@ -37,7 +37,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
   end
 
 
-  def test_still
+  def test_quiet
     sth = Sth.new
 
     obj = Object.new
@@ -55,7 +55,7 @@ class Test_Struct_Validatable_SpecificCondition < Test::Unit::TestCase
     end
   end
 
-  def test_catch
+  def test_rescue
     sth = Sth.new
 
     obj = Object.new
@@ -219,7 +219,7 @@ class Test_Struct_Subclass_Instance_SpecificConditions_FunctionalCondition < Tes
   max = 9
 
   SthProc = Struct.new :lank do
-    validator :lank, Proc.new{|n|(3..max) === n}
+    validator :lank, -> n {(3..max) === n}
   end
 
   def test_Proc

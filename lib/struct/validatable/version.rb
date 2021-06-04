@@ -3,6 +3,6 @@
 
 class Struct
   module Validatable
-    VERSION = '0.2.0'.freeze
+    VERSION = '0.2.0'
   end
 end

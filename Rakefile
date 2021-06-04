@@ -23,7 +23,7 @@ Rake::TestTask.new(:test) do |tt|
   tt.warning = true
 end
 
-multitask validate_signatures: [:test_yard, :'signature:validate']
+multitask validate_signatures: [:test_yard]
 
 task :test_yard do
   sh "bundle exec yard --fail-on-warning #{'--no-progress' if ENV['CI']}"
