@@ -26,15 +26,16 @@ end
 
 person = Person.new
 person.name = ''        #=> error
-person.name = 'Foo Bar' #=> pass
+person.name = +'Foo Bar' #=> pass
 person.valid?(:name)    #=> true
 person.name.clear
 person.valid?(:name)    #=> false
 ```
 
-The pattern builder DSL is just using [eqq](https://github.com/kachick/eqq)
+* The pattern builder DSL is just using [eqq](https://github.com/kachick/eqq)
+* Supporting `keyword_init: true`
 
 ## Links
 
-- [Repository](https://github.com/kachick/struct-validatable)
-- [API documents](https://kachick.github.io/struct-validatable/)
+* [Repository](https://github.com/kachick/struct-validatable)
+* [API documents](https://kachick.github.io/struct-validatable/)
