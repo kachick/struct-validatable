@@ -65,9 +65,9 @@ class Struct; module Validatable
       end
     end
 
-    # @param [Proc] _proc
-    def adjustable?(_proc)
-      _proc.respond_to?(:call) && (_proc.arity.abs == 1)
+    # @param [Proc] proc
+    def adjustable?(proc)
+      (Proc === proc) && (proc.arity.abs == 1)
     end
 
     # @endgroup
