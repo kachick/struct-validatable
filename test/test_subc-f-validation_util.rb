@@ -36,7 +36,7 @@ class Test_Struct_Subclass_Validation_Util < Test::Unit::TestCase
     assert_same false, foo.valid?(:bar)
     assert_same true, foo.valid?(:hoge)
     assert_same false, foo.valid?(:some_str)
-    foo.some_str = ':)'
+    foo.some_str = +':)'
     assert_same true, foo.valid?(:some_str)
     foo.some_str.clear
     assert_same false, foo.valid?(:some_str)
