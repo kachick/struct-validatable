@@ -12,7 +12,7 @@ Require Ruby 2.7 or later
 Add below code into your Gemfile
 
 ```ruby
-gem 'struct-validatable', '>= 0.2.0', '< 0.3.0'
+gem 'struct-validatable', '~> 0.3.0'
 ```
 
 ### Overview
