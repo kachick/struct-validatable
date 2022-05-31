@@ -1,7 +1,10 @@
+* ***This repository is archived***
+* ***No longer maintained***
+* ***All versions have been yanked from https://rubygems.org for releasing valuable namespace for others***
+
 # struct-validatable
 
 ![Build Status](https://github.com/kachick/struct-validatable/actions/workflows/test_behaviors.yml/badge.svg?branch=main)
-[![Gem Version](https://badge.fury.io/rb/struct-validatable.png)](http://badge.fury.io/rb/struct-validatable)
 
 Struct will be able to have validators for each member
 
@@ -39,3 +42,7 @@ person.valid?(:name)    #=> false
 
 * [Repository](https://github.com/kachick/struct-validatable)
 * [API documents](https://kachick.github.io/struct-validatable/)
+
+## License
+
+MIT License - 2011 - Kenichi Kamiya
